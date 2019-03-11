@@ -4,6 +4,11 @@ IFS=$'\n\t'
 
 generate_yml() {
     run_script 'env_update'
+    local COMPOSE_VERSION
+    COMPOSE_VERSION=$(run_script 'env_get' COMPOSE_VERSION)
+    if vergt "3" "${COMPOSE_VERSION}"; then
+        fatal "COMPOSE_VERSION in ${SCRIPTPATH}/compose/.env must be at least 3."
+    fi
     info "Generating docker-compose.yml file."
     local RUNFILE
     RUNFILE="${SCRIPTPATH}/compose/docker-compose.sh"
