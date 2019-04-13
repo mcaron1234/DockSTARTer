@@ -30,7 +30,7 @@ services:
       - NFS_EXPORT_2=/books ${NFS_IP_NETWORKS}(fsid=2,${NFS_OPTIONS})
       - NFS_EXPORT_3=/comics ${NFS_IP_NETWORKS}(fsid=3,${NFS_OPTIONS})
       - NFS_EXPORT_4=/configs ${NFS_IP_NETWORKS}(fsid=4,${NFS_OPTIONS})
-      - NFS_EXPORT_5=/downloads ${NFS_IP_NETWORKS}(fsid=5${NFS_OPTIONS})
+      - NFS_EXPORT_5=/downloads ${NFS_IP_NETWORKS}(fsid=5,${NFS_OPTIONS})
       - NFS_EXPORT_6=/movies ${NFS_IP_NETWORKS}(fsid=6,${NFS_OPTIONS})
       - NFS_EXPORT_7=/music ${NFS_IP_NETWORKS}(fsid=7,${NFS_OPTIONS})
       - NFS_EXPORT_8=/shared ${NFS_IP_NETWORKS}(fsid=8,${NFS_OPTIONS})
