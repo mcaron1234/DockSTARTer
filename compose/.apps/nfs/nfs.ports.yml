@@ -1,0 +1,4 @@
+services:
+  nfs:
+    ports:
+      - "${NFS_PORT_2049}:2049"
