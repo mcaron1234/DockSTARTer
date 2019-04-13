@@ -25,7 +25,7 @@ services:
     environment:
       - TZ=${TZ}
       - NFS_DISABLE_VERSION_3=1
-      - NFS_EXPORT_1='/audiobooks ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
+      - NFS_EXPORT_1=/audiobooks ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
       - NFS_EXPORT_2='/books ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
       - NFS_EXPORT_3='/comics ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
       - NFS_EXPORT_4='/configs ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
