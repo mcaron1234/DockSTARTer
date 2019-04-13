@@ -26,6 +26,15 @@ services:
     environment:
       - TZ=${TZ}
       - NFS_DISABLE_VERSION_3=1
-      - NFS_EXPORT_1=/nfs ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_1=/nfs ${NFS_IP_NETWORKS}(fsid=0,${NFS_OPTIONS})
+      - NFS_EXPORT_2=/nfs/audiobooks ${NFS_IP_NETWORKS}(fsid=1,${NFS_OPTIONS})
+      - NFS_EXPORT_3=/nfs/books ${NFS_IP_NETWORKS}(fsid=2,${NFS_OPTIONS})
+      - NFS_EXPORT_4=/nfs/comics ${NFS_IP_NETWORKS}(fsid=3,${NFS_OPTIONS})
+      - NFS_EXPORT_5=/nfs/configs ${NFS_IP_NETWORKS}(fsid=4,${NFS_OPTIONS})
+      - NFS_EXPORT_6=/nfs/downloads ${NFS_IP_NETWORKS}(fsid=5,${NFS_OPTIONS})
+      - NFS_EXPORT_7=/nfs/movies ${NFS_IP_NETWORKS}(fsid=6,${NFS_OPTIONS})
+      - NFS_EXPORT_8=/nfs/music ${NFS_IP_NETWORKS}(fsid=7,${NFS_OPTIONS})
+      - NFS_EXPORT_9=/nfs/shared ${NFS_IP_NETWORKS}(fsid=8,${NFS_OPTIONS})
+      - NFS_EXPORT_10=/nfs/tv ${NFS_IP_NETWORKS}(fsid=9,${NFS_OPTIONS})
     cap_add:
       - SYS_MODULE
