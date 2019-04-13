@@ -35,5 +35,5 @@ services:
       - NFS_EXPORT_8='/shared ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
       - NFS_EXPORT_9='/tv ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
     cap_add:
-      - SYS_ADMIN
+      - privileged
       - SYS_MODULE
