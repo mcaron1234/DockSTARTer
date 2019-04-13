@@ -10,6 +10,7 @@ services:
       options:
         max-file: ${DOCKERLOGGING_MAXFILE}
         max-size: ${DOCKERLOGGING_MAXSIZE}
+    privileged: true
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /lib/modules:/lib/modules:ro
@@ -26,14 +27,13 @@ services:
       - TZ=${TZ}
       - NFS_DISABLE_VERSION_3=1
       - NFS_EXPORT_1=/audiobooks ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
-      - NFS_EXPORT_2='/books ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
-      - NFS_EXPORT_3='/comics ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
-      - NFS_EXPORT_4='/configs ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
-      - NFS_EXPORT_5='/downloads ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
-      - NFS_EXPORT_6='/movies ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
-      - NFS_EXPORT_7='/music ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
-      - NFS_EXPORT_8='/shared ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
-      - NFS_EXPORT_9='/tv ${NFS_IP_NETWORKS}(${NFS_OPTIONS})'
+      - NFS_EXPORT_2=/books ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_3=/comics ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_4=/configs ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_5=/downloads ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_6=/movies ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_7=/music ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_8=/shared ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
+      - NFS_EXPORT_9=/tv ${NFS_IP_NETWORKS}(${NFS_OPTIONS})
     cap_add:
-      - privileged
       - SYS_MODULE
